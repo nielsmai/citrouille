@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    public bool grounded = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,11 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
         rb.AddForce(movement * speed);
+
+        if (Input.GetButtonDown("Jump") & grounded==true) {
+            rb.AddForce(new Vector3(0,5,0), ForceMode.Impulse);
+            grounded = false;
+      }
     }
 
 }
