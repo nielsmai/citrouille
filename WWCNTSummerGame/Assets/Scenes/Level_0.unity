@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 544666555}
   - component: {fileID: 544666554}
   - component: {fileID: 544666553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,6 +434,11 @@ MonoBehaviour:
   speed: 10
   grounded: 1
   boosting: 1
+  cam: {fileID: 0}
+  focus: {fileID: 0}
+  movementMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &1682406125
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -492,6 +497,7 @@ GameObject:
   - component: {fileID: 1734734319}
   - component: {fileID: 1734734318}
   - component: {fileID: 1734734317}
+  - component: {fileID: 1734734321}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -577,6 +583,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734734321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734734316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b01d2d489a5504f9356191f25fa901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
 --- !u!1 &1893697237
 GameObject:
   m_ObjectHideFlags: 0
