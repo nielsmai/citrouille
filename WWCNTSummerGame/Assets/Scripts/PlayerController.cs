@@ -15,10 +15,15 @@ public class PlayerController : MonoBehaviour
     public bool grounded = true;
     public bool boosting = true;
 
+    public Camera cam;
+    public Interactable focus;
+    public LayerMask movementMask;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
     }
 
     private void OnMove(InputValue movementValue)
@@ -34,7 +39,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
         rb.AddForce(movement * speed);
-        Debug.Log(speed);
 
     }
 
@@ -53,10 +57,43 @@ public class PlayerController : MonoBehaviour
             speed = 10;
             boosting = false;
         }
+        //Check for left mouse button click
+        if (Input.GetMouseButtonDown(0)) {
+            //Case out a ray
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            //Check if the ray hits anything
+            if (Physics.Raycast(ray, out hit, 100)) {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null) {
+                    SetFocus(interactable);
+                    Debug.Log("Hit Interact " + hit.collider.name + " " + hit.point);
+
+                }
+            }
+            
     }
+}
     //This function prevents the player from jumping before touching the ground again
     private void OnCollisionEnter(Collision collision){
       grounded = true;
     }
 
+    private void SetFocus(Interactable newFocus) {
+        if (newFocus != focus) {
+            if (focus != null) {
+                focus.OnDefocused();
+            }
+            focus = newFocus;
+            newFocus.OnFocused(transform);
+        }
+    }
+    private void RemoveFocus() {
+        if (focus != null) {
+            focus.OnDefocused();
+        }
+        focus = null;
+    }
 }
+
