@@ -8,7 +8,9 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+ 
   m_EditorHideFlags: 0
+
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -20,6 +22,8 @@ MonoBehaviour:
     height: 990
   m_ShowMode: 4
   m_Title: Hierarchy
+
+
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -49,6 +53,7 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
   controlID: 39
+
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -70,6 +75,7 @@ MonoBehaviour:
     height: 940
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -96,6 +102,7 @@ MonoBehaviour:
     height: 557
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -128,6 +135,7 @@ MonoBehaviour:
   - {fileID: 17}
   m_Selected: 1
   m_LastSelected: 0
+
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,6 +158,7 @@ MonoBehaviour:
     y: 0
     width: 1728
     height: 990
+
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -174,6 +183,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1728
+
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -196,6 +206,7 @@ MonoBehaviour:
     x: 0
     y: 970
     width: 1728
+
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -224,6 +235,7 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
   controlID: 40
+
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,6 +261,7 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 41
+
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,12 +281,14 @@ MonoBehaviour:
     y: 0
     width: 994
     height: 557
+
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
+
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
@@ -300,13 +315,15 @@ MonoBehaviour:
     y: 629
     width: 1318.5
     height: 362
+
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
     m_NameFilter: 
-    m_ClassNames: []
+    m_ClassNames:
+    - Material
     m_AssetLabels: []
     m_AssetBundleNames: []
     m_VersionControlStates: []
@@ -318,14 +335,16 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
     - Assets/Scripts
+
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scripts
+
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\cinnamon\Documents\GitHub\SummerGame2022\WWCNTSummerGame
+  m_LastProjectPath: C:\Users\angel\Documents\GitHub\SummerGame\WWCNTSummerGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -333,6 +352,7 @@ MonoBehaviour:
     m_SelectedIDs: 664f0000
     m_LastClickedID: 20326
     m_ExpandedIDs: 00000000224f000000ca9a3b
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,6 +381,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000224f0000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,6 +410,7 @@ MonoBehaviour:
     m_LastClickedInstanceID: 20192
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
+
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -404,7 +426,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -440,6 +462,7 @@ MonoBehaviour:
     y: -15970
     width: 407.5
     height: 919
+
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -481,6 +504,7 @@ MonoBehaviour:
     y: -15970
     width: 324.5
     height: 536
+
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -491,6 +515,7 @@ MonoBehaviour:
       m_SelectedIDs: e04e0000
       m_LastClickedID: 20192
       m_ExpandedIDs: 34fbffff
+
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,7 +531,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -538,6 +563,7 @@ MonoBehaviour:
     y: -15970
     width: 992
     height: 536
+
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -549,6 +575,7 @@ MonoBehaviour:
       displayed: 1
       snapOffset: {x: -101, y: -26}
       snapOffsetDelta: {x: 0, y: 0}
+
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -742,6 +769,7 @@ MonoBehaviour:
     m_Target: {x: -0.009697586, y: -7.683838, z: 0.9938774}
     speed: 2
     m_Value: {x: -0.009697586, y: -7.683838, z: 0.9938774}
+
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -795,6 +823,7 @@ MonoBehaviour:
     m_Target: 19.67464
     speed: 2
     m_Value: 19.67464
+
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -843,17 +872,21 @@ MonoBehaviour:
     y: 72
     width: 992
     height: 536
+
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - C:\Users\angel\Documents\GitHub\SummerGame\WWCNTSummerGame\Library\PlayModeViewStates\1429dc0451f9690428a03a0c3e7c3ff4
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
   m_TargetSize: {x: 992, y: 515}
+
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -872,6 +905,7 @@ MonoBehaviour:
     m_HBaseRangeMax: 248
     m_VBaseRangeMin: -128.75
     m_VBaseRangeMax: 128.75
+
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -893,6 +927,7 @@ MonoBehaviour:
       height: 515
     m_Scale: {x: 2, y: 2}
     m_Translation: {x: 496, y: 257.5}
+
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -906,6 +941,7 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 2
   m_LastWindowPixelSize: {x: 1984, y: 1072}
+
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -939,3 +975,4 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+
