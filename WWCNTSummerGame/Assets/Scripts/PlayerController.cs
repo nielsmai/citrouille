@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null) {
                     SetFocus(interactable);
-                    Debug.Log("Hit Interact " + hit.collider.name + " " + hit.point);
+                    // Debug.Log("Hit Interact " + hit.collider.name + " " + hit.point);
 
                 }
             }
