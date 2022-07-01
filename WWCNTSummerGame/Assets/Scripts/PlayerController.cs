@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
+        // Check if inventory is open
+        if (EventSystem.current.IsPointerOverGameObject()) {
+            return;
+        }
         // Allows the player to jump
         if (Input.GetButtonDown("Jump") & grounded==true) {
             rb.AddForce(new Vector3(0,5,0), ForceMode.Impulse);
