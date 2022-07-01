@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public Interactable focus;
     public LayerMask movementMask;
 
+    // Boolean for inventory opening
+    public bool inventoryOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +48,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
         // Check if inventory is open
-        if (EventSystem.current.IsPointerOverGameObject()) {
-            return;
+        if (Input.GetButtonDown("Inventory"))
+        {
+            inventoryOpen = !inventoryOpen;
+        }
+        // Prevent moving while inventory is open
+        if (inventoryOpen)
+        {
+            movementX = 0;
+            movementY = 0;
         }
         // Allows the player to jump
         if (Input.GetButtonDown("Jump") & grounded==true) {
