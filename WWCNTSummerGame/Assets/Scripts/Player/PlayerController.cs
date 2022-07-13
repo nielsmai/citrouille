@@ -110,5 +110,17 @@ public class PlayerController : MonoBehaviour
         }
         focus = null;
     }
+
+    // Functions to save and load player data
+    public void SavePlayer() {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer() {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null) {
+            transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+        }
+    }
 }
 
