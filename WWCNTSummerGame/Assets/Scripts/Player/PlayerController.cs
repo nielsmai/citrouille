@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private float gravity = -9.81f * 2f;
 
-
+    // Keep track of the number of pumpkins picked up
+    public static int numPumpkins = 0;
 
     // Boolean for inventory opening
     public bool inventoryOpen = false;
@@ -166,5 +167,11 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
         }
     }
+    public static bool pickUpPumpkin() {
+        numPumpkins++;
+        Debug.Log(numPumpkins);
+        return true;
+    }
 }
+
 
