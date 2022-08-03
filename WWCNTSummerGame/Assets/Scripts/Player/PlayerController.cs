@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public Interactable focus;
     public LayerMask movementMask;
 
+    // Character controller
+    CharacterController controller;
+
+
     // Boolean for inventory opening
     public bool inventoryOpen = false;
 
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
         cam = Camera.main;
     }
 
@@ -41,8 +46,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        controller.Move(movement * speed * Time.deltaTime);
 
-        rb.AddForce(movement * speed);
+        // rb.AddForce(movement * speed);
 
     }
 
