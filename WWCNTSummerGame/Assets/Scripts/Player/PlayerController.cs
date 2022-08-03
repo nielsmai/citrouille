@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
+    public float jumpHeight = 3;
 
     private Rigidbody rb;
 
@@ -22,6 +23,14 @@ public class PlayerController : MonoBehaviour
 
     // Character controller
     CharacterController controller;
+    private float ySpeed;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    private Vector3 velocity;
+    private bool isGrounded;
+    private float gravity = -9.81f * 2f;
 
 
     // Boolean for inventory opening
@@ -45,14 +54,37 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        controller.Move(movement * speed * Time.deltaTime);
+        // Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        // Vector3 velocity = new Vector3(movement.x * speed, ySpeed, movement.z * speed);
+        // controller.Move(velocity * Time.deltaTime);
+
 
         // rb.AddForce(movement * speed);
 
     }
 
     private void Update() {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        // Flip the axis for now to match the camera positioning
+        float x = Input.GetAxis("Horizontal") * -1.0f;
+        float z = Input.GetAxis("Vertical") * -1.0f;
+
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        // Our gravity value is doubled to make the player fall faster
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
         // Check if inventory is open
         if (Input.GetButtonDown("Inventory"))
         {
@@ -64,11 +96,6 @@ public class PlayerController : MonoBehaviour
             movementX = 0;
             movementY = 0;
         }
-        // Allows the player to jump
-        if (Input.GetButtonDown("Jump") & grounded==true) {
-            rb.AddForce(new Vector3(0,5,0), ForceMode.Impulse);
-            grounded = false;
-      }
       // Allows the player to go fast
         if (Input.GetButton("Speed")) {
             speed = 20;
