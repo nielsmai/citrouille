@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
+    public float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
     public float jumpHeight = 3;
 
     private Rigidbody rb;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     private bool isGrounded;
     private float gravity = -9.81f * 2f;
+
 
 
     // Boolean for inventory opening
@@ -71,12 +74,19 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
 
-        // Flip the axis for now to match the camera positioning
-        float x = Input.GetAxis("Horizontal") * -1.0f;
-        float z = Input.GetAxis("Vertical") * -1.0f;
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
+        Vector3 move = new Vector3(x, 0.0f, z).normalized;
+
+        if (move.magnitude > 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+
+            controller.Move(move * speed * Time.deltaTime); 
+        }       
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -85,6 +95,7 @@ public class PlayerController : MonoBehaviour
         // Our gravity value is doubled to make the player fall faster
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
         // Check if inventory is open
         if (Input.GetButtonDown("Inventory"))
         {
