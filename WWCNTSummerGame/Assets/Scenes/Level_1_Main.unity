@@ -161,6 +161,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4177905426599160936, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1588364734}
     - target: {fileID: 4823555451757791186, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
       propertyPath: m_Name
       value: PumpkinPickUp 1
@@ -500,6 +504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4177905426599160936, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1588364734}
     - target: {fileID: 4823555451757791186, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
       propertyPath: m_Name
       value: PumpkinPickUp 1 (1)
@@ -1937,6 +1945,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4177905426599160936, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1588364734}
     - target: {fileID: 4823555451757791186, guid: 1b04599c2dede5b4283942a0c13eac11, type: 3}
       propertyPath: m_Name
       value: PumpkinPickUp
