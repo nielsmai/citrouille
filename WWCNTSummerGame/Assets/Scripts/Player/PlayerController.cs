@@ -174,6 +174,17 @@ public class PlayerController : MonoBehaviour
     }
     public static bool pickUpPumpkin() {
         numPumpkins++;
+        if (numPumpkins >= 1) {
+            // Get position of fox
+            // Vector3 foxPos = GameObject.Find("Fox").transform.position;
+            // Hide fox
+            GameObject.Find("Fox").SetActive(false);
+            // // Show FoxEnd gameobject
+            // GameObject.Find("FoxEnd").SetActive(true);
+            // // Set fox end position to fox position
+            // GameObject.Find("FoxEnd").transform.position = foxPos;  
+            return true;
+        }
         return true;
     }
 }
