@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16006184, g: 0.10940822, b: 0.14998323, a: 1}
+  m_IndirectSpecularColor: {r: 0.16004637, g: 0.109428324, b: 0.15008962, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1972,8 +1972,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 2}
-  m_Center: {x: 1.5, y: 1.5, z: 0}
+  m_Size: {x: 3.0000002, y: 1.5, z: 1.5}
+  m_Center: {x: 1.5000001, y: 1.5, z: 0}
 --- !u!114 &1929947657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,6 +1987,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1588364745}
+--- !u!136 &1929947659
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929947651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 3.2
+  m_Direction: 0
+  m_Center: {x: 1.5, y: 1.6, z: 0}
+--- !u!136 &1929947660
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929947651}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.8
+  m_Direction: 1
+  m_Center: {x: 1.5, y: 1.2, z: 0}
 --- !u!1 &1957528852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,7 +2026,7 @@ GameObject:
   - component: {fileID: 1957528855}
   - component: {fileID: 1957528854}
   - component: {fileID: 1957528853}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

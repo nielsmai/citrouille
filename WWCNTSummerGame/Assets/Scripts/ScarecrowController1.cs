@@ -8,13 +8,18 @@ public class ScarecrowController1 : MonoBehaviour
 
     private int healthPoints;
 
+    Animator anim;
+
     private void Start(){
         healthPoints = 3;
+        anim = GetComponent<Animator>();
     }
 
     private void Update(){
         if (healthPoints == 0){
-            Destroy(gameObject);
+            anim.SetTrigger("Dead");
+            // Add 1 second timer
+            Destroy(gameObject, 1);
         }
     }
 
@@ -22,7 +27,6 @@ public class ScarecrowController1 : MonoBehaviour
     {
         if (other.tag == "Player" && player.isAttacking)
         {
-            Animator anim = GetComponent<Animator>();
             anim.SetTrigger("Hit");
             healthPoints--;
         }
