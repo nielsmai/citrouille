@@ -9,8 +9,6 @@ public class DialogueTrigger : Interactable
     public override void Interact()
     {
         base.Interact();
-        // Log
-        Debug.Log("Interacting with Fox");
         // DisplayDialogue();
         TriggerDialogue();
     }

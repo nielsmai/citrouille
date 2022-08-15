@@ -124,14 +124,12 @@ public class PlayerController : MonoBehaviour
         }
         //Check for left mouse button click
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Left mouse button clicked");
             //Case out a ray
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             //Check if the ray hits anything
             if (Physics.Raycast(ray, out hit, 100)) {
-                Debug.Log("Hit " + hit.transform.name);
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null) {
                     SetFocus(interactable);
@@ -176,7 +174,6 @@ public class PlayerController : MonoBehaviour
     }
     public static bool pickUpPumpkin() {
         numPumpkins++;
-        Debug.Log(numPumpkins);
         return true;
     }
 }
