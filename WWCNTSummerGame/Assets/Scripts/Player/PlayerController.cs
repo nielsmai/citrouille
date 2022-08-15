@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
     }
     public static bool pickUpPumpkin() {
         numPumpkins++;
-        if (numPumpkins >= 1) {
+        if (numPumpkins >= 10) {
             // Get position of fox
             // Vector3 foxPos = GameObject.Find("Fox").transform.position;
             // Hide fox
@@ -182,10 +182,14 @@ public class PlayerController : MonoBehaviour
             // // Show FoxEnd gameobject
             // GameObject.Find("FoxEnd").SetActive(true);
             // // Set fox end position to fox position
-            // GameObject.Find("FoxEnd").transform.position = foxPos;  
+            // GameObject.Find("FoxEnd").transform.position = foxPos;
             return true;
         }
         return true;
+    }
+    // Function to access the number of pumpkins
+    public static int getNumPumpkins() {
+        return numPumpkins;
     }
 }
 
