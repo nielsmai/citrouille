@@ -26,7 +26,7 @@ public class Punching : MonoBehaviour
         isAttacking = true;
         canAttack = false;
         Animator anim = fist.GetComponent<Animator>();
-        anim.SetTrigger("Attacking");
+        anim.SetTrigger("Attack");
         StartCoroutine(ResetAttackCooldown());
     }
 

@@ -9,6 +9,7 @@ public class DialogueTrigger : Interactable
     public override void Interact()
     {
         base.Interact();
+
         // DisplayDialogue();
         TriggerDialogue();
     }

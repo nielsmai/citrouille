@@ -40,15 +40,12 @@ public class PlayerController : MonoBehaviour
     // Boolean for inventory opening
     public bool inventoryOpen = false;
 
-    private Animator anim;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
-        anim = GetComponent<Animator>();
     }
 
     private void OnMove(InputValue movementValue)
@@ -85,7 +82,6 @@ public class PlayerController : MonoBehaviour
 
         if (move.magnitude > 0.1f)
         {
-            anim.SetTrigger("Moving");
             float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
@@ -96,7 +92,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            anim.SetTrigger("Jumping");
         }
         // Our gravity value is doubled to make the player fall faster
         velocity.y += gravity * Time.deltaTime;
@@ -174,22 +169,8 @@ public class PlayerController : MonoBehaviour
     }
     public static bool pickUpPumpkin() {
         numPumpkins++;
-        if (numPumpkins >= 10) {
-            // Get position of fox
-            // Vector3 foxPos = GameObject.Find("Fox").transform.position;
-            // Hide fox
-            GameObject.Find("Fox").SetActive(false);
-            // // Show FoxEnd gameobject
-            // GameObject.Find("FoxEnd").SetActive(true);
-            // // Set fox end position to fox position
-            // GameObject.Find("FoxEnd").transform.position = foxPos;
-            return true;
-        }
+        Debug.Log(numPumpkins);
         return true;
-    }
-    // Function to access the number of pumpkins
-    public static int getNumPumpkins() {
-        return numPumpkins;
     }
 }
 
