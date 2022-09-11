@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -57,5 +58,13 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         // Debug.Log("End of conversation.");
+
+        // Check for for ending the game
+        // This occurs when we've collected 10 pumpkins and the fox finished his dialogue
+        // getNumPumpkins() from PlayerController.cs
+        if (PlayerController.getNumPumpkins() >= 10)
+        {
+            SceneManager.LoadScene("EndMenu");
+        }
     }
 }
