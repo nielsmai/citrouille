@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,7 +36,9 @@ public class PlayerController : MonoBehaviour
     private float gravity = -9.81f * 2f;
 
     // Keep track of the number of pumpkins picked up
-    public static int numPumpkins = 0;
+    public static int numPumpkins;
+    public TextMeshProUGUI pumpkinCount;
+    private static bool updateText = false;
 
     // Boolean for inventory opening
     public bool inventoryOpen = false;
@@ -49,6 +52,10 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
         anim = GetComponent<Animator>();
+
+        numPumpkins = 0;
+        SetCountText();
+        
     }
 
     private void OnMove(InputValue movementValue)
@@ -57,6 +64,11 @@ public class PlayerController : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+    }
+
+    void SetCountText()
+    {
+        pumpkinCount.text = "x " + numPumpkins.ToString();
     }
 
     private void FixedUpdate()
@@ -71,6 +83,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
+        // Check if the text needs to be updated
+        if (updateText) {
+            SetCountText();
+            updateText = false;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -133,10 +150,8 @@ public class PlayerController : MonoBehaviour
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null) {
                     SetFocus(interactable);
-                    // Debug.Log("Hit Interact " + hit.collider.name + " " + hit.point);
-
                 }
-            }
+            }            
             
     }
 }
@@ -174,6 +189,7 @@ public class PlayerController : MonoBehaviour
     }
     public static bool pickUpPumpkin() {
         numPumpkins++;
+        updateText = true;
         if (numPumpkins >= 10) {
             // Get position of fox
             // Vector3 foxPos = GameObject.Find("Fox").transform.position;
